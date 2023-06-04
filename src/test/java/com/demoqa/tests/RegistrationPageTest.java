@@ -11,6 +11,7 @@ public class RegistrationPageTest extends TestBase {
 
         //Проверка формы
         registrationPage.openPage()
+                .closeBanners()
                 .setFirsName("Sergei")
                 .setLastName("Zizu")
                 .setUserEmail("twst@ya.ru")
@@ -19,7 +20,7 @@ public class RegistrationPageTest extends TestBase {
                 .setBirthDay("15", "October", "1991")
                 .setSubject("Maths")
                 .setHobbies("Sports")
-                .selectPicture()
+                .selectPicture("qa.png")
                 .setState("NCR")
                 .setCity("Noida")
                 .setAddress("Moscow, Red street 4")
@@ -27,16 +28,16 @@ public class RegistrationPageTest extends TestBase {
 
         //Проверка формы
         registrationPage.verifyGreeting()
-                .verifyStudentName("Sergei Zizu")
-                .verifyStudentEmail("twst@ya.ru")
-                .verifyGender("Male")
-                .verifyMobile("7111111223")
-                .verifyDateOfBirth("15 October,1991")
-                .verifySubjects("Maths")
-                .verifyHobbies("Sports")
-                .verifyPicture("qa.png")
-                .verifyAddress("Moscow, Red street 4")
-                .verifyStateAndCity("NCR Noida");
+                .verifyResult("Student Name", "Sergei Zizu")
+                .verifyResult("Student Email", "twst@ya.ru")
+                .verifyResult("Gender", "Male")
+                .verifyResult("Mobile", "7111111223")
+                .verifyResult("Date of Birth", "15 October,1991")
+                .verifyResult("Subjects", "Maths")
+                .verifyResult("Hobbies", "Sports")
+                .verifyResult("Picture", "qa.png")
+                .verifyResult("Address", "Moscow, Red street 4")
+                .verifyResult("State and City", "NCR Noida");
 
         //Закрытие модальной формы
         registrationPage.closeModalForm();

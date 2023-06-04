@@ -1,15 +1,15 @@
 package com.demoqa.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import com.demoqa.pages.components.Calendar;
-import com.demoqa.pages.components.VerifyResults;
+import com.demoqa.pages.components.CalendarComponent;
+import com.demoqa.pages.components.VerifyResultsСomponent;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
-    Calendar calendar = new Calendar();
-    VerifyResults verify = new VerifyResults();
+    CalendarComponent calendar = new CalendarComponent();
+    VerifyResultsСomponent verify = new VerifyResultsСomponent();
 
     SelenideElement firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
@@ -29,6 +29,10 @@ public class RegistrationPage {
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
+        return this;
+    }
+
+    public RegistrationPage closeBanners() {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;
@@ -91,8 +95,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage selectPicture() {
-        selectPicture.uploadFromClasspath("qa.png");
+    public RegistrationPage selectPicture(String filename) {
+        selectPicture.uploadFromClasspath(filename);
         return this;
     }
 
@@ -106,53 +110,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage verifyStudentName(String firsAndLastName) {
-        verify.verifyStudentName(firsAndLastName);
-        return this;
-    }
-
-    public RegistrationPage verifyStudentEmail(String email) {
-        verify.verifyEmail(email);
-        return this;
-    }
-
-    public RegistrationPage verifyGender(String genderValue) {
-        verify.verifyGender(genderValue);
-        return this;
-    }
-
-    public RegistrationPage verifyMobile(String mobile) {
-        verify.verifyMobile(mobile);
-        return this;
-    }
-
-    public RegistrationPage verifyDateOfBirth(String date) {
-        verify.verifyDateOfBirth(date);
-        return this;
-    }
-
-    public RegistrationPage verifySubjects(String subject) {
-        verify.verifySubjects(subject);
-        return this;
-    }
-
-    public RegistrationPage verifyHobbies(String hobby) {
-        verify.verifyHobbies(hobby);
-        return this;
-    }
-
-    public RegistrationPage verifyPicture(String filename) {
-        verify.verifyPicture(filename);
-        return this;
-    }
-
-    public RegistrationPage verifyAddress(String address) {
-        verify.verifyAddress(address);
-        return this;
-    }
-
-    public RegistrationPage verifyStateAndCity(String stateAndCity) {
-        verify.verifyStateAndCity(stateAndCity);
+    public RegistrationPage verifyResult(String key, String value) {
+        verify.verifyResult(key, value);
         return this;
     }
 
