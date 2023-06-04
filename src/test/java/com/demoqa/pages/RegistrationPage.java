@@ -1,15 +1,15 @@
 package com.demoqa.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import com.demoqa.pages.components.Calendar;
-import com.demoqa.pages.components.VerifyResults;
+import com.demoqa.pages.components.CalendarComponent;
+import com.demoqa.pages.components.VerifyResultsСomponent;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
-    Calendar calendar = new Calendar();
-    VerifyResults verify = new VerifyResults();
+    CalendarComponent calendar = new CalendarComponent();
+    VerifyResultsСomponent verify = new VerifyResultsСomponent();
 
     SelenideElement firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
@@ -29,6 +29,10 @@ public class RegistrationPage {
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
+        return this;
+    }
+
+    public RegistrationPage closeBanners() {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;
@@ -91,8 +95,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage selectPicture() {
-        selectPicture.uploadFromClasspath("qa.png");
+    public RegistrationPage selectPicture(String filename) {
+        selectPicture.uploadFromClasspath(filename);
         return this;
     }
 
@@ -106,53 +110,53 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage verifyStudentName(String firsAndLastName) {
-        verify.verifyStudentName(firsAndLastName);
+    public RegistrationPage verifyStudentName(String key, String firsAndLastName) {
+        verify.verifyResult(key, firsAndLastName);
         return this;
     }
 
-    public RegistrationPage verifyStudentEmail(String email) {
-        verify.verifyEmail(email);
+    public RegistrationPage verifyStudentEmail(String key, String email) {
+        verify.verifyResult(key, email);
         return this;
     }
 
-    public RegistrationPage verifyGender(String genderValue) {
-        verify.verifyGender(genderValue);
+    public RegistrationPage verifyGender(String key, String genderValue) {
+        verify.verifyResult(key, genderValue);
         return this;
     }
 
-    public RegistrationPage verifyMobile(String mobile) {
-        verify.verifyMobile(mobile);
+    public RegistrationPage verifyMobile(String key, String mobile) {
+        verify.verifyResult(key, mobile);
         return this;
     }
 
-    public RegistrationPage verifyDateOfBirth(String date) {
-        verify.verifyDateOfBirth(date);
+    public RegistrationPage verifyDateOfBirth(String key, String date) {
+        verify.verifyResult(key, date);
         return this;
     }
 
-    public RegistrationPage verifySubjects(String subject) {
-        verify.verifySubjects(subject);
+    public RegistrationPage verifySubjects(String key, String subject) {
+        verify.verifyResult(key, subject);
         return this;
     }
 
-    public RegistrationPage verifyHobbies(String hobby) {
-        verify.verifyHobbies(hobby);
+    public RegistrationPage verifyHobbies(String key, String hobby) {
+        verify.verifyResult(key, hobby);
         return this;
     }
 
-    public RegistrationPage verifyPicture(String filename) {
-        verify.verifyPicture(filename);
+    public RegistrationPage verifyPicture(String key, String filename) {
+        verify.verifyResult(key, filename);
         return this;
     }
 
-    public RegistrationPage verifyAddress(String address) {
-        verify.verifyAddress(address);
+    public RegistrationPage verifyAddress(String key, String address) {
+        verify.verifyResult(key, address);
         return this;
     }
 
-    public RegistrationPage verifyStateAndCity(String stateAndCity) {
-        verify.verifyStateAndCity(stateAndCity);
+    public RegistrationPage verifyStateAndCity(String key, String stateAndCity) {
+        verify.verifyResult(key, stateAndCity);
         return this;
     }
 
