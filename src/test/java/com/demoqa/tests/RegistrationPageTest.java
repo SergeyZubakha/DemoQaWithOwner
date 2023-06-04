@@ -28,16 +28,16 @@ public class RegistrationPageTest extends TestBase {
 
         //Проверка формы
         registrationPage.verifyGreeting()
-                .verifyStudentName("Student Name", "Sergei Zizu")
-                .verifyStudentEmail("Student Email", "twst@ya.ru")
-                .verifyGender("Gender", "Male")
-                .verifyMobile("Mobile", "7111111223")
-                .verifyDateOfBirth("Date of Birth", "15 October,1991")
-                .verifySubjects("Subjects", "Maths")
-                .verifyHobbies("Hobbies", "Sports")
-                .verifyPicture("Picture", "qa.png")
-                .verifyAddress("Address", "Moscow, Red street 4")
-                .verifyStateAndCity("State and City", "NCR Noida");
+                .verifyResult("Student Name", "Sergei Zizu")
+                .verifyResult("Student Email", "twst@ya.ru")
+                .verifyResult("Gender", "Male")
+                .verifyResult("Mobile", "7111111223")
+                .verifyResult("Date of Birth", "15 October,1991")
+                .verifyResult("Subjects", "Maths")
+                .verifyResult("Hobbies", "Sports")
+                .verifyResult("Picture", "qa.png")
+                .verifyResult("Address", "Moscow, Red street 4")
+                .verifyResult("State and City", "NCR Noida");
 
         //Закрытие модальной формы
         registrationPage.closeModalForm();

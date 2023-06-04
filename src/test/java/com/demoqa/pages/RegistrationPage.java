@@ -110,53 +110,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage verifyStudentName(String key, String firsAndLastName) {
-        verify.verifyResult(key, firsAndLastName);
-        return this;
-    }
-
-    public RegistrationPage verifyStudentEmail(String key, String email) {
-        verify.verifyResult(key, email);
-        return this;
-    }
-
-    public RegistrationPage verifyGender(String key, String genderValue) {
-        verify.verifyResult(key, genderValue);
-        return this;
-    }
-
-    public RegistrationPage verifyMobile(String key, String mobile) {
-        verify.verifyResult(key, mobile);
-        return this;
-    }
-
-    public RegistrationPage verifyDateOfBirth(String key, String date) {
-        verify.verifyResult(key, date);
-        return this;
-    }
-
-    public RegistrationPage verifySubjects(String key, String subject) {
-        verify.verifyResult(key, subject);
-        return this;
-    }
-
-    public RegistrationPage verifyHobbies(String key, String hobby) {
-        verify.verifyResult(key, hobby);
-        return this;
-    }
-
-    public RegistrationPage verifyPicture(String key, String filename) {
-        verify.verifyResult(key, filename);
-        return this;
-    }
-
-    public RegistrationPage verifyAddress(String key, String address) {
-        verify.verifyResult(key, address);
-        return this;
-    }
-
-    public RegistrationPage verifyStateAndCity(String key, String stateAndCity) {
-        verify.verifyResult(key, stateAndCity);
+    public RegistrationPage verifyResult(String key, String value) {
+        verify.verifyResult(key, value);
         return this;
     }
 
