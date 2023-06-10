@@ -7,6 +7,7 @@ public class CalendarComponent {
 
         $x("//select[contains(@class,'month-select')]").selectOption(month);
         $x("//select[contains(@class,'year-select')]").selectOption(year);
-        $(".react-datepicker__day--0" + day).click();
+        $(".react-datepicker__day--0" + day +
+                ":not(.react-datepicker__day--outside-month)").click();
     }
 }

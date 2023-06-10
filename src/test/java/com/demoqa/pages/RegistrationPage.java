@@ -4,6 +4,8 @@ import com.codeborne.selenide.SelenideElement;
 import com.demoqa.pages.components.CalendarComponent;
 import com.demoqa.pages.components.VerifyResultsСomponent;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -118,7 +120,52 @@ public class RegistrationPage {
     public RegistrationPage closeModalForm() {
         closeButton.click();
         return this;
+    }
 
+    public static int getRandomInt(int min, int max) {
+        return ThreadLocalRandom.current().nextInt(min, max + 1);
+    }
+
+    public static String getRandomGender() {
+        String[] genders = {"Male", "Female", "Other"};
+        return getRandomItemFromArray(genders);
+    }
+
+    public static String getRandomMonth() {
+        String[] month = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+        return getRandomItemFromArray(month);
+    }public static String getRandomSubject() {
+        String[] subjects = {"Math", "English", "Chemistry", "Civics", "Computer Science", "Arts", "Physics", "Economics"};
+        return getRandomItemFromArray(subjects);
+    }
+      public static String getRandomState() {
+    String[] state = {"NCR", "Uttar Pradesh", "Haryana", "Rajasthan"};
+    return getRandomItemFromArray(state);
+}
+    public static String getRandomCity(String state) {
+        if (state.equals("NCR")) {
+            String[] city = {"Delhi", "Gurgaon", "Noida"};
+            return getRandomItemFromArray(city);
+        } else if (state.equals("Uttar Pradesh")) {
+            String[] city = {"Agra", "Lucknow", "Merrut"};
+            return getRandomItemFromArray(city);
+        } else if (state.equals("Haryana")) {
+            String[] city = {"Karnal", "Panipat"};
+            return getRandomItemFromArray(city);
+        } else if (state.equals("Rajasthan")) {
+            String[] city = {"Jaipur", "Jaiselmer"};
+            return getRandomItemFromArray(city);
+        }
+        return null;
+    }
+    public static String getRandomHobbies() {
+        String[] hobby = {"Sports", "Reading", "Music"};
+        return getRandomItemFromArray(hobby);
+    }
+
+
+    private static String getRandomItemFromArray(String[] values) {
+        int index = getRandomInt(0, values.length - 1);
+        return values[index];
     }
 }
-
