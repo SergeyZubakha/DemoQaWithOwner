@@ -39,7 +39,6 @@ public class RegistrationPageTestWithRandomData extends TestBase {
                 .setUserEmail(Email)
                 .setGender(Gender)
                 .setUserNumber(PhoneNumber)
-                //.setBirthDay("15", "October", "1991")
                 .setBirthDay(Day, Month, Year)
                 .setSubject(Subject)
                 .setHobbies(Hobbies)
