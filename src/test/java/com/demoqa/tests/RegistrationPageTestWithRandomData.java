@@ -27,7 +27,6 @@ public class RegistrationPageTestWithRandomData extends TestBase {
             FileName = "qa.png";
 
 
-
     @Test
     void successfulRegistrationTest() {
 
@@ -59,7 +58,7 @@ public class RegistrationPageTestWithRandomData extends TestBase {
                 .verifyResult("Hobbies", Hobbies)
                 .verifyResult("Picture", FileName)
                 .verifyResult("Address", Address)
-                .verifyResult("State and City",State + " " + City );
+                .verifyResult("State and City", State + " " + City);
 
         //Закрытие модальной формы
         registrationPage.closeModalForm();
