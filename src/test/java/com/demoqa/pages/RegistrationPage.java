@@ -4,8 +4,6 @@ import com.codeborne.selenide.SelenideElement;
 import com.demoqa.pages.components.CalendarComponent;
 import com.demoqa.pages.components.VerifyResultsСomponent;
 
-import java.util.concurrent.ThreadLocalRandom;
-
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 

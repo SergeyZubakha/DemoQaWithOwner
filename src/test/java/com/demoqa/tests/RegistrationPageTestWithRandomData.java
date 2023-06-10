@@ -1,9 +1,5 @@
 package com.demoqa.tests;
-
-import com.demoqa.pages.RegistrationPage;
-import com.github.javafaker.*;
 import org.junit.jupiter.api.Test;
-
 import static com.demoqa.utils.GetRandoms.*;
 
 public class RegistrationPageTestWithRandomData extends TestBase {
@@ -23,7 +19,6 @@ public class RegistrationPageTestWithRandomData extends TestBase {
             state = getRandomState(),
             city = getRandomCity(state),
             fileName = "qa.png";
-
 
     @Test
     void successfulRegistrationTest() {

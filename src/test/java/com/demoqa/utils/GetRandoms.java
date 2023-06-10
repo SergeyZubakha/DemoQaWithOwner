@@ -1,7 +1,5 @@
 package com.demoqa.utils;
-
 import com.github.javafaker.*;
-
 import java.util.concurrent.ThreadLocalRandom;
 
 public class GetRandoms {
