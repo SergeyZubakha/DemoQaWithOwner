@@ -1,9 +1,12 @@
 package com.demoqa.tests;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import com.demoqa.pages.RegistrationPage;
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import io.qameta.allure.selenide.AllureSelenide;
 
 import java.util.Map;
 
@@ -28,4 +31,11 @@ public class TestBase {
 
         Configuration.browserCapabilities = capabilities;
     }
+
+    @BeforeEach
+    void addListener() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+    }
+
+
 }
