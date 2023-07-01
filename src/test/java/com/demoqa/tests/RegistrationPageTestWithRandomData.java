@@ -1,7 +1,11 @@
 package com.demoqa.tests;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+
+import static com.codeborne.selenide.Selenide.sleep;
 import static com.demoqa.utils.GetRandoms.*;
 
+@Tag("Basic")
 public class RegistrationPageTestWithRandomData extends TestBase {
 
     String firstName = faker.name().firstName(),
