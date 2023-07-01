@@ -13,6 +13,8 @@ import io.qameta.allure.selenide.AllureSelenide;
 
 import java.util.Map;
 
+import static com.codeborne.selenide.Selenide.closeWebDriver;
+
 public class TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
     Faker faker = new Faker();
@@ -47,5 +49,7 @@ public class TestBase {
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.addVideo();
+
+        closeWebDriver();
     }
 }
