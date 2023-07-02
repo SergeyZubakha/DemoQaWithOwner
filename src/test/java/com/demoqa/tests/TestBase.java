@@ -21,13 +21,19 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
+        //Configuration.baseUrl = "https://demoqa.com";
+        //Configuration.browserSize = "1920x1080";
         //Configuration.holdBrowserOpen = true;
         //Configuration.screenshots = false;
         //Configuration.savePageSource = false;
+        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub"; //для запуска тестов удаленно
         Configuration.pageLoadStrategy = "eager";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub"; //для запуска тестов удаленно
+
+        Configuration.remote = System.getProperty("selenoidUrl"); //для запуска тестов удаленно
+        Configuration.baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("browserVersion", "100.0");
+        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(

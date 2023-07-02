@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import static com.demoqa.utils.GetRandoms.*;
 import static io.qameta.allure.Allure.step;
 
-@Tag("Basic")
 public class RegistrationPageTestWithRandomData extends TestBase {
 
     String firstName = faker.name().firstName(),
@@ -27,6 +26,7 @@ public class RegistrationPageTestWithRandomData extends TestBase {
             fileName = "qa.png";
 
     @Test
+    @Tag("Basic")
     @DisplayName("Successful registration")
     void successfulRegistrationTest() {
 
