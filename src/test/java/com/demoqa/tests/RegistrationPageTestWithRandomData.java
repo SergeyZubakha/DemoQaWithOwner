@@ -65,10 +65,9 @@ public class RegistrationPageTestWithRandomData extends TestBase {
         });
 
         //Закрытие формы
-        step("Close form", () -> {
-            //Закрытие модальной формы
-            registrationPage.closeModalForm();
-        });
+//        step("Close form", () -> {
+//            registrationPage.closeModalForm();
+//        });
     }
 }
 
