@@ -1,15 +1,25 @@
 package com.demoqa.tests;
-import com.codeborne.selenide.Configuration;
+
+import com.demoqa.config.WebConfiguration;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.BeforeAll;
 
+import static com.codeborne.selenide.Configuration.*;
+
 public class TestBase {
+    static WebConfiguration config = ConfigFactory.create(WebConfiguration.class, System.getProperties());
+
     @BeforeAll
     static void beforeAll() {
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
-        Configuration.holdBrowserOpen = true;
-        Configuration.pageLoadStrategy = "eager";
-        Configuration.screenshots = false;
-        Configuration.savePageSource = false;
+
+        baseUrl = config.baseUrl();
+        browser = config.browser();
+        browserVersion = config.browserVersion();
+        pageLoadStrategy = "eager";
+        browserSize = config.browserSize();
+        if (config.isRemote()) {
+            remote = config.remoteUrl();
+        }
+
     }
 }

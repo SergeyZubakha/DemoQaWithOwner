@@ -2,12 +2,13 @@ package com.demoqa.tests;
 
 import com.demoqa.pages.RegistrationPage;
 import com.github.javafaker.*;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import javax.security.auth.Subject;
 
 import static com.demoqa.pages.RegistrationPage.*;
-
+@Tag("regress")
 public class RegistrationPageTestWithRandomData extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
     Faker faker = new Faker();
